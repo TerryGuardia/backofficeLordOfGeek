@@ -14,7 +14,7 @@ class JeuController extends Controller
      */
     public function index()
     {
-        $jeux = Jeu::all();
+        $jeux = Jeu::orderBy('id', 'asc')->get();
         return view('jeux.index', ['jeux' => $jeux]);
     }
 
