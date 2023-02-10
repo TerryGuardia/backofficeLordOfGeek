@@ -29,7 +29,9 @@
                                     <x-btn-modifier :action="route('jeux.edit', $jeu->id)">
                                         {{ __('Edit') }}
                                     </x-btn-modifier>
-                                    <a href="{{ route('jeux.show', $jeu->id) }}" class="px-4 py-3 bg-gray-200 text-gray rounded hover:bg-gray-100 my-auto">Voir</a>
+                                    <x-btn-voir :action="route('jeux.show', $jeu->id)">
+                                        {{ __('Vue') }}
+                                    </x-btn-voir>
                                     <x-btn-supprimer :action="route('jeux.destroy', $jeu->id)">
                                         {{ __('Delete') }}
                                     </x-btn-supprimer>

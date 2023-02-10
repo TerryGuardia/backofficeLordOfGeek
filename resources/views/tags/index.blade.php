@@ -29,7 +29,9 @@
                                     <x-btn-modifier :action="route('tags.edit', $tag->id)">
                                         {{ __('Edit') }}
                                     </x-btn-modifier>
-                                    <a href="{{ route('tags.show', $tag->id) }}" class="px-4 py-3 bg-gray-200 text-gray rounded hover:bg-gray-100 my-auto">Voir</a>
+                                    <x-btn-voir :action="route('tags.show', $tag->id)">
+                                        {{ __('Vue') }}
+                                    </x-btn-voir>
                                     <x-btn-supprimer :action="route('tags.destroy', $tag->id)">
                                         {{ __('Delete') }}
                                     </x-btn-supprimer>

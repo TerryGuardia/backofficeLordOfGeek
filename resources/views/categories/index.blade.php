@@ -18,7 +18,8 @@
                                 <th class="border px-4 py-2">Libelle</th>
                                 <th class="border px-4 py-2">Actions</th>
                                 <th><a href="{{ route('categories.create') }}" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-400">{{ __('Create') }}</a>
-                                </th></tr>
+                                </th>
+                            </tr>
                         </thead>
                         <tbody>
                             @foreach($categories as $categorie)
@@ -29,7 +30,9 @@
                                     <x-btn-modifier :action="route('categories.edit', $categorie->id)">
                                         {{ __('Edit') }}
                                     </x-btn-modifier>
-                                    <a href="{{ route('categories.show', $categorie->id) }}" class="px-4 py-3 bg-gray-200 text-gray rounded hover:bg-gray-100 my-auto">Voir</a>
+                                    <x-btn-voir :action="route('categories.show', $categorie->id)">
+                                        {{ __('Vue') }}
+                                    </x-btn-voir> 
                                     <x-btn-supprimer :action="route('categories.destroy', $categorie->id)">
                                         {{ __('Delete') }}
                                     </x-btn-supprimer>
