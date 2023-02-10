@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('jeux', function (Blueprint $table) {
-            $table->id();
-            $table->string('titre')->unique('titre');
-            $table->unsignedBigInteger('categorie_id');
-            $table->foreign('categorie_id')->references('id')->on('categories');
+        Schema::create('pivot_tags', function (Blueprint $table) {
+            $table->unsignedBigInteger('jeu_id');
+            $table->unsignedBigInteger('tag_id');
+            $table->foreign('jeu_id')->references('id')->on('jeux');
+            $table->foreign('tag_id')->references('id')->on('tags');
+            $table->primary(['jeu_id','tag_id']);
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jeux');
+        Schema::dropIfExists('pivot_tags');
     }
 };

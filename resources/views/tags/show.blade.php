@@ -11,7 +11,17 @@
                 <h1 class="p-6 text-gray-900 text-2xl font-bold">
                     {{ $tag->nom }}
                 </h1>
-                <p class="w-3/5">Liste des jeux avec ce tag</p>
+                @if (count($jeux) > 0)
+                <ul>Liste des jeux avec ce tag
+                    @foreach($jeux as $jeu)
+                    <li class="ml-2 mt-2">
+                        <a href="{{route('jeux.show', $jeu->id)}}">{{$jeu->titre}}</a>
+                    </li>
+                    @endforeach
+                </ul>
+                @else
+                Aucun jeu a ce tag.
+                @endif
                 <div class="flex w-3/5 justify-end mt-5">
                     <x-btn-modifier :action="route('tags.edit', $tag->id)">
                         {{ __('Edit') }}

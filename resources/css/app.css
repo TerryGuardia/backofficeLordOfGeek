@@ -11,3 +11,6 @@
 .btn-blue:hover {
     @apply bg-blue-700;
 }
+.etiquette {
+    width: fit-content;
+}

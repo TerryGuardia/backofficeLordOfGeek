@@ -41,6 +41,8 @@ Route::get('jeux/{id}', [JeuController::class, 'show'])->name('jeux.show');
 Route::get('jeux/{id}/edit', [JeuController::class, 'edit'])->name('jeux.edit');
 Route::put('jeux/{id}', [JeuController::class, 'update'])->name('jeux.update');
 Route::delete('jeux/{id}', [JeuController::class, 'destroy'])->name('jeux.destroy');
+Route::post('jeux/{id}/attach', [JeuController::class, 'attach'])->name('jeux.attach');
+Route::get('jeux/{id_jeu}/detach/{id_tag}', [JeuController::class, 'detach'])->name('jeux.detach');
 
 Route::resource('categories', CategorieController::class);
 
