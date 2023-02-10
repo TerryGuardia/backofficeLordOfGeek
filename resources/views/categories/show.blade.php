@@ -13,11 +13,11 @@
                 </h1>
                 <p class="w-3/5">Liste de tous les jeux de cette catégorie</p>
                 <div class="flex w-3/5 justify-end mt-5">
-                    <x-btn-modifier :categorie="$categorie">
+                    <x-btn-modifier :action="route('categories.edit', $categorie->id)">
                         {{ __('Edit') }}
                     </x-btn-modifier>
                     <div class="mx-2"></div>
-                    <x-btn-supprimer :categorie="$categorie">
+                    <x-btn-supprimer :action="route('categories.edit', $categorie->id)">
                         {{ __('Delete') }}
                     </x-btn-supprimer>
                 </div>

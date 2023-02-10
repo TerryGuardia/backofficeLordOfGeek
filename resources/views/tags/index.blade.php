@@ -26,11 +26,11 @@
                                 <td class="border text-center px-4 py-2">{{ $tag->id }}</td>
                                 <td class="border px-4 py-2">{{ $tag->nom }}</td>
                                 <td class="border px-4 py-2 flex justify-evenly">
-                                    <x-btn-modifier :tag="$tag">
+                                    <x-btn-modifier :action="route('tags.edit', $tag->id)">
                                         {{ __('Edit') }}
                                     </x-btn-modifier>
                                     <a href="{{ route('tags.show', $tag->id) }}" class="px-4 py-3 bg-gray-200 text-gray rounded hover:bg-gray-100 my-auto">Voir</a>
-                                    <x-btn-supprimer :tag="$tag">
+                                    <x-btn-supprimer :action="route('tags.destroy', $tag->id)">
                                         {{ __('Delete') }}
                                     </x-btn-supprimer>
                                 </td>

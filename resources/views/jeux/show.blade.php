@@ -13,11 +13,11 @@
                 </h1>
                 <p class="w-3/5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe non minima quidem earum inventore atque quasi. Dignissimos voluptatibus delectus quis saepe vero, laudantium facilis. Nihil repellendus pariatur molestiae doloribus totam.</p>
                 <div class="flex w-3/5 justify-end mt-5">
-                    <x-btn-modifier :jeu="$jeu">
+                    <x-btn-modifier :action="route('jeux.edit', $jeu->id)">
                         {{ __('Edit') }}
                     </x-btn-modifier>
                     <div class="mx-2"></div>
-                    <x-btn-supprimer :jeu="$jeu">
+                    <x-btn-supprimer :action="route('jeux.edit', $jeu->id)">
                         {{ __('Delete') }}
                     </x-btn-supprimer>
                 </div>

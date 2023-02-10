@@ -26,11 +26,11 @@
                                 <td class="border text-center px-4 py-2">{{ $jeu->id }}</td>
                                 <td class="border px-4 py-2">{{ $jeu->titre }}</td>
                                 <td class="border px-4 py-2 flex justify-evenly">
-                                    <x-btn-modifier :jeu="$jeu">
+                                    <x-btn-modifier :action="route('jeux.edit', $jeu->id)">
                                         {{ __('Edit') }}
                                     </x-btn-modifier>
                                     <a href="{{ route('jeux.show', $jeu->id) }}" class="px-4 py-3 bg-gray-200 text-gray rounded hover:bg-gray-100 my-auto">Voir</a>
-                                    <x-btn-supprimer :jeu="$jeu">
+                                    <x-btn-supprimer :action="route('jeux.destroy', $jeu->id)">
                                         {{ __('Delete') }}
                                     </x-btn-supprimer>
                                 </td>

@@ -13,11 +13,11 @@
                 </h1>
                 <p class="w-3/5">Liste des jeux avec ce tag</p>
                 <div class="flex w-3/5 justify-end mt-5">
-                    <x-btn-modifier :tag="$tag">
+                    <x-btn-modifier :action="route('tags.edit', $tag->id)">
                         {{ __('Edit') }}
                     </x-btn-modifier>
                     <div class="mx-2"></div>
-                    <x-btn-supprimer :tag="$tag">
+                    <x-btn-supprimer :action="route('tags.edit', $tag->id)">
                         {{ __('Delete') }}
                     </x-btn-supprimer>
                 </div>

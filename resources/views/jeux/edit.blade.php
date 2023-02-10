@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 w-3/5">
-                    <form action="" method="post">
+                    <form action="{{route('jeux.update', $jeu->id)}}" method="post">
                         @csrf
                         @method('PUT')
 
@@ -18,6 +18,9 @@
                                 {{ __('Title') }}
                             </label>
                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="titre" type="text" name="titre" value="{{ old('titre', $jeu->titre) }}" required>
+                        @error('titre')
+                        <div class="text-red-500">{{$message}}</div>
+                        @enderror
                         </div>
 
                         <button type="submit" class="bg-blue-500 p-3 text-white font-bold rounded hover:bg-blue-400 mr-5">

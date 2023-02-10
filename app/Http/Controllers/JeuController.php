@@ -78,7 +78,18 @@ class JeuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($request->validate([
+            'titre' => 'required|string|max:45|min:5'
+        ])) {
+            $titre = $request->input('titre');
+            $jeu = Jeu::find($id);
+            $jeu->titre = $titre;
+            $jeu->save();
+            return redirect()->route('jeux.index');
+        }
+        else {
+            return redirect()->back();
+        }
     }
 
     /**
@@ -89,6 +100,7 @@ class JeuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Jeu::destroy($id);
+        return redirect()->route('jeux.index');
     }
 }

@@ -78,7 +78,18 @@ class CategorieController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($request->validate([
+            'libelle' => 'required|string|max:45|min:5'
+        ])) {
+            $libelle = $request->input('libelle');
+            $categorie = Categorie::find($id);
+            $categorie->libelle = $libelle;
+            $categorie->save();
+            return redirect()->route('categories.index');
+        }
+        else {
+            return redirect()->back();
+        }
     }
 
     /**
@@ -89,6 +100,7 @@ class CategorieController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Categorie::destroy($id);
+        return redirect()->route('categories.index');
     }
 }

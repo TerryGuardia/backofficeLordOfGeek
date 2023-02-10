@@ -26,11 +26,11 @@
                                 <td class="border text-center px-4 py-2">{{ $categorie->id }}</td>
                                 <td class="border px-4 py-2">{{ $categorie->libelle }}</td>
                                 <td class="border px-4 py-2 flex justify-evenly">
-                                    <x-btn-modifier :categorie="$categorie">
+                                    <x-btn-modifier :action="route('categories.edit', $categorie->id)">
                                         {{ __('Edit') }}
                                     </x-btn-modifier>
                                     <a href="{{ route('categories.show', $categorie->id) }}" class="px-4 py-3 bg-gray-200 text-gray rounded hover:bg-gray-100 my-auto">Voir</a>
-                                    <x-btn-supprimer :categorie="$categorie">
+                                    <x-btn-supprimer :action="route('categories.destroy', $categorie->id)">
                                         {{ __('Delete') }}
                                     </x-btn-supprimer>
                                 </td>
