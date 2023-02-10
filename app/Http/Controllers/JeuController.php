@@ -43,7 +43,7 @@ class JeuController extends Controller
             $jeu = new Jeu();
             $jeu->titre = $titre;
             $jeu->save();
-            return redirect()->route('jeux.index');
+            return redirect()->route('jeux.show', $jeu->id);
         }
         else {
             return redirect()->route('jeux.create');
@@ -96,7 +96,7 @@ class JeuController extends Controller
             $jeu = Jeu::find($id);
             $jeu->titre = $titre;
             $jeu->save();
-            return redirect()->route('jeux.index');
+            return redirect()->route('jeux.show', $jeu->id);
         }
         else {
             return redirect()->back();

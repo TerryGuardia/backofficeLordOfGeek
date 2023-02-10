@@ -23,12 +23,8 @@
                         @enderror
                         </div>
 
-                        <button type="submit" class="bg-blue-500 p-3 text-white font-bold rounded hover:bg-blue-400 mr-5">
-                            {{ __('Save') }}
-                        </button>
-                        <button type="reset" class="p-3 text-gray font-bold bg-gray-200 text-gray rounded hover:bg-gray-100">
-                            {{ __('Cancel') }}
-                        </button>
+                        <x-btn-sauvegarder></x-btn-sauvegarder>
+                        <x-btn-annuler></x-btn-annuler>
                     </form>
                 </div>
             </div>

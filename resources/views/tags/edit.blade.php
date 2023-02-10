@@ -19,16 +19,11 @@
                             </label>
                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nom" type="text" name="nom" value="{{ old('nom', $tag->nom) }}" required>
                             @error('nom')
-                        <div class="text-red-500">{{$message}}</div>
-                        @enderror
+                            <div class="text-red-500">{{$message}}</div>
+                            @enderror
                         </div>
-
-                        <button type="submit" class="bg-blue-500 p-3 text-white font-bold rounded hover:bg-blue-400 mr-5">
-                            {{ __('Save') }}
-                        </button>
-                        <button type="reset" class="p-3 text-gray font-bold bg-gray-200 text-gray rounded hover:bg-gray-100">
-                            {{ __('Cancel') }}
-                        </button>
+                        <x-btn-sauvegarder></x-btn-sauvegarder>
+                        <x-btn-annuler></x-btn-annuler>
                     </form>
                 </div>
             </div>

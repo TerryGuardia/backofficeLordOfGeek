@@ -43,7 +43,7 @@ class TagController extends Controller
             $tag = new Tag();
             $tag->nom = $nom;
             $tag->save();
-            return redirect()->route('tags.index');
+            return redirect()->route('tags.show', $tag->id);
         }
         else {
             return redirect()->route('tags.create');
@@ -96,7 +96,7 @@ class TagController extends Controller
             $tag = Tag::find($id);
             $tag->nom = $nom;
             $tag->save();
-            return redirect()->route('tags.index');
+            return redirect()->route('tags.show', $tag->id);
         }
         else {
             return redirect()->back();

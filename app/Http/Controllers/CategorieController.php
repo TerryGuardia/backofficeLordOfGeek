@@ -43,7 +43,7 @@ class CategorieController extends Controller
             $categorie = new Categorie();
             $categorie->libelle = $libelle;
             $categorie->save();
-            return redirect()->route('categories.index');
+            return redirect()->route('categories.show', $categorie->id);
         }
         else {
             return redirect()->route('categories.create');
@@ -96,7 +96,7 @@ class CategorieController extends Controller
             $categorie = Categorie::find($id);
             $categorie->libelle = $libelle;
             $categorie->save();
-            return redirect()->route('categories.index');
+            return redirect()->route('categories.show', $categorie->id);
         }
         else {
             return redirect()->back();
