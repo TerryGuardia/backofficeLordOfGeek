@@ -17,8 +17,12 @@
                                 <th class="border px-4 py-2">ID</th>
                                 <th class="border px-4 py-2">Titre</th>
                                 <th class="border px-4 py-2">Actions</th>
-                                <th><a href="{{ route('jeux.create') }}" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-400">{{ __('Create') }}</a>
-                                </th></tr>
+                                <th>
+                                    <x-btn-creer :action="route('jeux.create')">
+                                        {{ __('Create') }}
+                                    </x-btn-creer>
+                                </th>
+                            </tr>
                         </thead>
                         <tbody>
                             @foreach($jeux as $jeu)

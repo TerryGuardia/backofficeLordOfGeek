@@ -17,7 +17,10 @@
                                 <th class="border px-4 py-2">ID</th>
                                 <th class="border px-4 py-2">Nom</th>
                                 <th class="border px-4 py-2">Actions</th>
-                                <th><a href="{{ route('tags.create') }}" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-400">{{ __('Create') }}</a>
+                                <th>
+                                <x-btn-creer :action="route('tags.create')">
+                                        {{ __('Create') }}
+                                    </x-btn-creer>
                                 </th></tr>
                         </thead>
                         <tbody>

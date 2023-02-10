@@ -17,7 +17,10 @@
                                 <th class="border px-4 py-2">ID</th>
                                 <th class="border px-4 py-2">Libelle</th>
                                 <th class="border px-4 py-2">Actions</th>
-                                <th><a href="{{ route('categories.create') }}" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-400">{{ __('Create') }}</a>
+                                <th>
+                                    <x-btn-creer :action="route('categories.create')">
+                                        {{ __('Create') }}
+                                    </x-btn-creer>
                                 </th>
                             </tr>
                         </thead>
@@ -32,7 +35,7 @@
                                     </x-btn-modifier>
                                     <x-btn-voir :action="route('categories.show', $categorie->id)">
                                         {{ __('Vue') }}
-                                    </x-btn-voir> 
+                                    </x-btn-voir>
                                     <x-btn-supprimer :action="route('categories.destroy', $categorie->id)">
                                         {{ __('Delete') }}
                                     </x-btn-supprimer>
