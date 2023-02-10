@@ -18,6 +18,9 @@
                                 {{ __('Wording') }}
                             </label>
                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="libelle" type="text" name="libelle" value="{{ old('libelle', $categorie->libelle) }}" required>
+                            @error('libelle')
+                        <div class="text-red-500">{{$message}}</div>
+                        @enderror
                         </div>
 
                         <button type="submit" class="bg-blue-500 p-3 text-white font-bold rounded hover:bg-blue-400 mr-5">

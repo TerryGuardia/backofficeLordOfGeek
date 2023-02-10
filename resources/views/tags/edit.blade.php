@@ -14,10 +14,13 @@
                         @method('PUT')
 
                         <div class="mb-4">
-                            <label class="block text-gray-800 font-bold mb-2" for="tag">
+                            <label class="block text-gray-800 font-bold mb-2" for="nom">
                                 {{ __('Tag') }}
                             </label>
                             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nom" type="text" name="nom" value="{{ old('nom', $tag->nom) }}" required>
+                            @error('nom')
+                        <div class="text-red-500">{{$message}}</div>
+                        @enderror
                         </div>
 
                         <button type="submit" class="bg-blue-500 p-3 text-white font-bold rounded hover:bg-blue-400 mr-5">
