@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 w-3/5">
-                    <form action="" method="post">
+                    <form action="{{route('categories.store')}}" method="post">
                         @csrf
 
                         <div class="mb-4">
@@ -17,6 +17,9 @@
                                 {{ __('Wording') }}
                             </label>
                             <input type="text" name="libelle" id="libelle" class="border p-2 w-full" required>
+                            @error('libelle')
+                        <div class="text-red-500">{{$message}}</div>
+                        @enderror
                         </div>
 
                         <button type="submit" class="bg-blue-500 p-3 text-white font-bold rounded hover:bg-blue-400 mr-5">

@@ -36,7 +36,18 @@ class CategorieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->validate([
+            'libelle' => 'required|string|max:45|min:5'
+        ])) {
+            $libelle = $request->input('libelle');
+            $categorie = new Categorie();
+            $categorie->libelle = $libelle;
+            $categorie->save();
+            return redirect()->route('categories.index');
+        }
+        else {
+            return redirect()->route('categories.create');
+        }
     }
 
     /**

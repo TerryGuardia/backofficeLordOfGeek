@@ -36,7 +36,18 @@ class JeuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->validate([
+            'titre' => 'required|string|max:45|min:5'
+        ])) {
+            $titre = $request->input('titre');
+            $jeu = new Jeu();
+            $jeu->titre = $titre;
+            $jeu->save();
+            return redirect()->route('jeux.index');
+        }
+        else {
+            return redirect()->route('jeux.create');
+        }
     }
 
     /**

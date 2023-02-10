@@ -36,7 +36,18 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->validate([
+            'nom' => 'required|string|max:45|min:5'
+        ])) {
+            $nom = $request->input('nom');
+            $tag = new Tag();
+            $tag->nom = $nom;
+            $tag->save();
+            return redirect()->route('tags.index');
+        }
+        else {
+            return redirect()->route('tags.create');
+        }
     }
 
     /**
