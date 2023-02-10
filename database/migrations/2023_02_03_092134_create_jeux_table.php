@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('jeux', function (Blueprint $table) {
             $table->id();
-            $table->string('titre');
+            $table->string('titre')->unique('titre');
             // $table->timestamps();
         });
     }
